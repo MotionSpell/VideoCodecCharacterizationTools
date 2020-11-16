@@ -235,3 +235,6 @@ GPAC_APP=/path/to/bin/gpac
 ```
 
 
+# License
+
+this work is available under BSD 3 clause license
