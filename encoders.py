@@ -114,9 +114,11 @@ class VTM(ReferenceEncoder):
     @staticmethod
     def decode_variant(v:VariantCfg, **opts):
         decoder = get_env("VTM_DECODER")
+        opl = v.anchor.working_dir / f'{v.basename}.opl'
         args = _to_cli_args({ 
             "-b": v.bitstream,
             "-o": v.reconstructed,
+            "-opl": opl,
             **opts })
         logfile = v.anchor.working_dir / f'{v.basename}.dec.log'
         run_process(logfile, decoder, *args)
